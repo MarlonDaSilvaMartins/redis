@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.redis.proto;
+
+option java_generate_equals_and_hash = false;
+option java_outer_classname = "UserProto";
+option java_multiple_files = true;
+option optimize_for = SPEED;
+
+message User {
+  optional int32 userId = 1;
+  optional string name = 2;
+  optional string email = 3;
+}

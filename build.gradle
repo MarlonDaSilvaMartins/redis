@@ -1,0 +1,39 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.redis'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.mapstruct:mapstruct:1.5.2.Final'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'com.google.protobuf:protobuf-java:3.21.5'
+	implementation 'com.google.protobuf:protoc:3.21.5'
+	implementation 'org.redisson:redisson:3.17.6'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor 'no.entur.mapstruct.spi:protobuf-spi-impl:1.39'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+	testImplementation 'org.redisson:redisson:3.17.6'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

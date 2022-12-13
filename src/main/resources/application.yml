@@ -1,0 +1,7 @@
+redis:
+  sentinels:
+    hosts: "redis://127.0.0.1:6379/0"
+    master_name: ""
+  timeout_ms: 3000
+  retry_attempts: 0
+  threads: 10
